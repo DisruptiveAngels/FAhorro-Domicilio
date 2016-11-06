@@ -31,6 +31,7 @@ class Layout extends React.Component {
         </head>
         <body>
           <div id='app' />
+          <script src="https://cdn.jsdelivr.net/places.js/1/places.min.js" />
           <script type='text/javascript' src={ `${this.prefix}/dist/${this.name}-v${this.version}.js` } />
         </body>
       </html>
