@@ -32,6 +32,9 @@ export default function bootstrapServer(done) {
   const server = http.createServer(app);
   const port = global.config.PORT || 3000;
 
+  // Initialize socket server
+  util.socketio.init(server);
+
   server.listen(port, () => {
     util.logger.info(`▸ HTTP server running on http://0.0.0.0:${port}`);
     done();

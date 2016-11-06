@@ -38,6 +38,17 @@ h1,h2,h3,h4,h5,h6 {
     font-size: 19px;
     padding-left: 130px;
   }
+
+  &.reception {
+    padding-left: 0;
+    text-align: center;
+    background-color: @color-error;
+
+    h1 {
+      color: @color-white;
+      padding-left: 0;
+    }
+  }
 }
 
 .logo {
@@ -51,6 +62,15 @@ label {
   font-weight: 300;
   margin-bottom: 10px;
   display: block;
+}
+
+.footer {
+  display: block;
+  position: absolute;
+  width: 150px;
+  margin-left: -75px;
+  left: 50%;
+  bottom: 20px;
 }
 
 input {
@@ -73,11 +93,51 @@ input {
   border-bottom: 1px solid lighten(@color-gray, 50%);
 }
 
+.notification {
+  padding: 10px;
+  margin: 20px 0;
+
+  strong {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  &.notification-success {
+    background-color: #56993e;
+    color: @color-white;
+  }
+}
+
 .product {
   padding: 10px;
   border: 1px solid lighten(@color-gray, 50%);
   margin-top: 20px;
   position: relative;
+
+  &.alert {
+    border: 1px solid @color-error;
+    background-color: @color-white;
+
+    @media(min-width: 700px) {
+      a, .moto {
+        display: none !important;
+      }
+    }
+
+    a {
+      background-color: @color-success;
+      color: @color-white;
+      border: none;
+      padding: 5px 10px;
+      position: absolute;
+      bottom: 10px;
+      right: 20px;
+
+      &.finalize {
+        background-color: @color-warning;
+      }
+    }
+  }
 
   img {
     position: absolute;

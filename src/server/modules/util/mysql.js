@@ -10,8 +10,8 @@ const MySQLHandler = {
    */
   init(done) {
     if (!global.config.MYSQL) {
-      logger.error('MySQL credentials are missing!');
-      return done(new Error('MySQL credentials are missing'));
+      logger.warn('MySQL credentials are missing! Skipping...');
+      return done();
     }
 
     // create database connection

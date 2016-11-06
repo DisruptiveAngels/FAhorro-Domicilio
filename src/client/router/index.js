@@ -4,6 +4,7 @@ import { Router, Route, browserHistory } from 'react-router';
 // -- Components
 import ApplicationContainer from '../components/ApplicationContainer.jsx';
 import Home from './Home';
+import Reception from './Reception';
 
 /**
  * Main application router
@@ -16,7 +17,7 @@ import Home from './Home';
 export default (
   <Router history={ browserHistory }>
     <Route path='/' component={ ApplicationContainer }>
-      {[ Home ]}
+      {[ Home, Reception ]}
     </Route>
   </Router>
 );

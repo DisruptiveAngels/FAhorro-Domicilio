@@ -20,14 +20,13 @@ class Layout extends React.Component {
     return (
       <html>
         <head>
-          <title>ReactStarter</title>
+          <title>Farmacias del Ahorro</title>
           <meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no' />
           <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" />
-          {
-            process.env.NODE_ENV === 'production'
-              ? <link rel='stylesheet' href={ `${this.prefix}/dist/${this.name}-v${this.version}.css` } />
-            : null
-          }
+          <link rel='icon' href='/resources/img/favicon.png' />
+          { process.env.NODE_ENV === 'production'
+            ? <link rel='stylesheet' href={ `${this.prefix}/dist/${this.name}-v${this.version}.css` } />
+          : null }
         </head>
         <body>
           <div id='app' />
