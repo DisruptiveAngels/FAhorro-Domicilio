@@ -1,0 +1,8 @@
+node_modules/
+dist/
+src/client/less
+resources/
+bin/
+package.json
+README.md
+circle.yml

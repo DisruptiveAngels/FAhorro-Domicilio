@@ -1,0 +1,33 @@
+#!/user/bin/env/node
+var colors = require('colors');
+
+console.log(colors.blue('    _    _           _  __                        '));
+console.log(colors.blue('   / \\  | | _____  _| |/ /_   ____ _ _______  ___ '));
+console.log(colors.blue('  / _ \\ | |/ _ \\ \\/ / \' /\\ \\ / / _` |_  / _ \\/ __|'));
+console.log(colors.blue(' / ___ \\| |  __/>  <| . \\ \\ V / (_| |/ / (_) \\__ \\'));
+console.log(colors.blue('/_/   \\_\\_|\\___/_/\\_\\_|\\_\\ \\_/ \\__,_/___\\___/|___/\n'));
+
+// Babel core require hook.
+// Allows for ES6 and ES7 syntax.
+try {
+  require('babel-register');
+} catch (e) {
+  console.error('########################################################');
+  console.error('[ERROR] Failed to load babel, did you run "npm install"?');
+  console.error('########################################################');
+  process.exit(1);
+}
+
+
+// Report that process started.
+var logger = require('../src/server/modules/util/logger');
+logger.info('Process started with pid', process.pid);
+
+// Store package version on global scope
+var fs = require('fs');
+var pkg = JSON.parse(fs.readFileSync(__dirname + '/../package.json'));
+global.version = pkg.version;
+global.name = pkg.name;
+
+// Initialize application
+require('../src/server/bootstrap');
