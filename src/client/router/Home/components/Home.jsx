@@ -21,6 +21,17 @@ class Main extends React.Component {
     let product = this.refs['product-name'].value;
     this.state.products.push(product);
     this.setState({ products: this.state.products });
+    this.refs['product-name'].value = '';
+  }
+
+  handleDelete(index) {
+    let { products } = this.state;
+    products.splice(index, 1);
+    this.setState({ products });
+  }
+
+  handleOrderSend() {
+
   }
 
   render() {
@@ -63,12 +74,16 @@ class Main extends React.Component {
                 <div className='separator' />
 
                 { this.state.products.map((product, $index) => (
-                  <div key={ $index } className='product'>
+                  <div key={ product } className='product'>
                     <p>{ product }</p>
+                    <img onClick={ this.handleDelete.bind(this, $index) } src='/resources/icon/delete.svg' />
                   </div>
                 )) }
 
               </div>
+              { this.state.products.length ? (
+                <button className='btn btn-primary' onClick={ ::this.handleOrderSend }>Enviar Pedido</button>
+              ) : null }
             </div>
 
           </div>

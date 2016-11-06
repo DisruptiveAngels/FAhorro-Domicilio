@@ -77,9 +77,33 @@ input {
   padding: 10px;
   border: 1px solid lighten(@color-gray, 50%);
   margin-top: 20px;
+  position: relative;
+
+  img {
+    position: absolute;
+    width: 20px;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
 
   p {
     margin: 0;
     font-weight: 300;
+  }
+}
+
+.btn {
+  color: @color-white;
+  border-radius: 0;
+  border: none;
+  display: block;
+  width: 100%;
+  padding: 8px 0;
+  margin-top: 20px;
+  cursor: pointer;
+
+  &.btn-primary {
+    background-color: @color-success;
   }
 }
