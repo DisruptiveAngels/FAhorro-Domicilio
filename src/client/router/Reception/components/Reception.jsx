@@ -1,6 +1,8 @@
 import React from 'react';
 import io from 'socket.io-client';
 
+let notification;
+
 class Reception extends React.Component {
   constructor() {
     super();
@@ -13,10 +15,13 @@ class Reception extends React.Component {
   componentWillMount() {
     let socket = io();
 
+    notification = new Audio('/resources/sound/notification.mp3');
+
     // Listen to order placements
     socket.on('order:placement', (order) => {
       this.state.orders.push(order);
       this.setState({ orders: this.state.orders });
+      notification.play();
     });
   }
 

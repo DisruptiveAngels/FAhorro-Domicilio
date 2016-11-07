@@ -12,13 +12,15 @@ class Main extends React.Component {
       nextTurn: 0,
       mvp: [
         {
+          // Frida Kahlo 195, Monterrey
           url: 'https://www.google.com.mx/maps/dir/FARMACIAS+DEL+AHORRO+PLUS/\'\'/@25.6429442,-100.3250485,16.27z/data=!4m13!4m12!1m5!1m1!1s0x0:0x34ebcf2642b6909f!2m2!1d-100.3159408!2d25.6375522!1m5!1m1!1s0x0:0xf514963a4fc7c14c!2m2!1d-100.323591!2d25.646729?hl=es',
           name: 'Farmacias del Ahorro Plus',
           eta: '5 a 15 Minutos'
         },
         {
+          // Del Refugio 111, San Pedro
           url: 'https://www.google.com.mx/maps/dir/\'\'/Farmacias+del+Ahorro/25.6365466,-100.3345384/@25.6491244,-100.3439726,14.65z/data=!4m15!4m14!1m5!1m1!1s0x0:0xf514963a4fc7c14c!2m2!1d-100.323591!2d25.646729!1m5!1m1!1s0x0:0xfd9ad01ebe301104!2m2!1d-100.3397532!2d25.6506255!1m0!3e0?hl=es',
-          name: 'Farmacas del Ahorro San Agustín',
+          name: 'Farmacias del Ahorro San Agustín',
           eta: '11 a 21 Minutos'
         }
       ]
@@ -76,7 +78,7 @@ class Main extends React.Component {
     });
     setTimeout(() => {
       this.setState({ sent: false });
-    }, 8000);
+    }, 15000);
   }
 
   render() {
